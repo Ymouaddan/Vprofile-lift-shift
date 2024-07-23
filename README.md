@@ -9,6 +9,36 @@ Ce projet vise à déployer l'application Vprofile, développée en Java, sur un
 - **Automatiser le processus de déploiement pour une livraison rapide et cohérente des mises à jour.**
 - **Mettre en œuvre des mesures de sécurité pour protéger l'application contre les accès non autorisés et les menaces.**
 
+Services Utulisés:
+
+- **EC2** (Elastic Compute Cloud)** : Déploiement et gestion des instances.
+- **Amazon S3 (Simple Storage Service)** : Stockage des artefacts et des fichiers.
+- **IAM (Identity and Access Management)** : Gestion des permissions et des accès sécurisés.
+- **VPC (Virtual Private Cloud)** : Configuration des réseaux et sous-réseaux.
+- **Route 53** : Gestion des noms de domaine et mapping IP-nom.
+- **Security Groups** : Définition des règles de trafic réseau.
+- **ACM (AWS Certificate Manager)** : Gestion des certificats SSL pour sécuriser les connexions HTTPS.
+- **ELB (Elastic Load Balancing)** : Équilibrage de la charge et gestion des connexions sécurisées.
+- **Auto Scaling** : Gestion automatique de la scalabilité des instances.
+- **Maven** : Outil de build pour créer l'artefact de l'application Java.
+- **Tomcat** : Serveur d'applications pour déployer l'artefact Java.
+- **GitHub** : Stockage et gestion du code source et des scripts.
+
+###   Compétences et bénéfices acquis :
+
+-**Gestion des services cloud** : Compétence en déploiement et gestion d'applications sur AWS.
+-**Sécurité et contrôle d'accès** : Mise en œuvre de pratiques de sécurité robustes avec IAM et les groupes de sécurité.
+-**Automatisation du déploiement** : Utilisation d'outils et de services pour automatiser les processus de déploiement.
+-**Scalabilité et haute disponibilité** : Configuration des groupes d'auto-scaling et des load balancers pour assurer la disponibilité de l'application.
+-**Gestion de noms de domaine et DNS** : Configuration et gestion des enregistrements DNS avec Route 53.
+-**Certifications SSL** : Gestion et intégration des certificats SSL pour sécuriser les connexions.
+-**Stockage et gestion des artefacts** : Utilisation d'Amazon S3 pour le stockage et la gestion des fichiers déployés.
+-**Développement et build** : Utilisation de Maven pour compiler et construire des applications Java.
+-**Déploiement d'applications web** : Compétence en déploiement d'applications sur Tomcat.
+-**Collaboration et gestion du code** : Utilisation de GitHub pour la gestion du code source et des scripts de déploiement.
+
+
+
 ### Étapes de l’implémentation :
 
 ### 1. Créer une paire de clés pour se connecter aux instances EC2
