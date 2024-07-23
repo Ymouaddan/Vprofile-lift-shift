@@ -26,16 +26,16 @@ Services Utulisés:
 
 ###   Compétences et bénéfices acquis :
 
--**Gestion des services cloud** : Compétence en déploiement et gestion d'applications sur AWS.
--**Sécurité et contrôle d'accès** : Mise en œuvre de pratiques de sécurité robustes avec IAM et les groupes de sécurité.
--**Automatisation du déploiement** : Utilisation d'outils et de services pour automatiser les processus de déploiement.
--**Scalabilité et haute disponibilité** : Configuration des groupes d'auto-scaling et des load balancers pour assurer la disponibilité de l'application.
--**Gestion de noms de domaine et DNS** : Configuration et gestion des enregistrements DNS avec Route 53.
--**Certifications SSL** : Gestion et intégration des certificats SSL pour sécuriser les connexions.
--**Stockage et gestion des artefacts** : Utilisation d'Amazon S3 pour le stockage et la gestion des fichiers déployés.
--**Développement et build** : Utilisation de Maven pour compiler et construire des applications Java.
--**Déploiement d'applications web** : Compétence en déploiement d'applications sur Tomcat.
--**Collaboration et gestion du code** : Utilisation de GitHub pour la gestion du code source et des scripts de déploiement.
+-   **Gestion des services cloud** : Compétence en déploiement et gestion d'applications sur AWS.
+-   **Sécurité et contrôle d'accès** : Mise en œuvre de pratiques de sécurité robustes avec IAM et les groupes de sécurité.
+-   **Automatisation du déploiement** : Utilisation d'outils et de services pour automatiser les processus de déploiement.
+-   **Scalabilité et haute disponibilité** : Configuration des groupes d'auto-scaling et des load balancers pour assurer la disponibilité de l'application.
+-   **Gestion de noms de domaine et DNS** : Configuration et gestion des enregistrements DNS avec Route 53.
+-   **Certifications SSL** : Gestion et intégration des certificats SSL pour sécuriser les connexions.
+-   **Stockage et gestion des artefacts** : Utilisation d'Amazon S3 pour le stockage et la gestion des fichiers déployés.
+-   **Développement et build** : Utilisation de Maven pour compiler et construire des applications Java.
+-   **Déploiement d'applications web** : Compétence en déploiement d'applications sur Tomcat.
+-   **Collaboration et gestion du code** : Utilisation de GitHub pour la gestion du code source et des scripts de déploiement.
 
 
 
