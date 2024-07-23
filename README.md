@@ -13,7 +13,8 @@ Ce projet vise à déployer l'application Vprofile, développée en Java, sur un
 
 ### 1. Créer une paire de clés pour se connecter aux instances EC2
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/1dd46321-50d8-4fbc-98c4-c400c02efd31/Untitled.png)
+![keypaire](https://github.com/user-attachments/assets/39ad9d34-de43-44c4-8e1f-561c7f6afa39)
+
 
 ### 2. Créer des groupes de sécurité pour définir les règles de trafic réseau
 
@@ -25,19 +26,23 @@ Pour cette partie, nous allons créer trois groupes de sécurité :
 
 ALB-SG:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/adcd7c66-2bd9-49e0-a526-2b4784d75d91/Untitled.png)
+![ALB-SG](https://github.com/user-attachments/assets/01cbf9a6-1bde-4622-be9a-09a835fd4782)
+
 
 my-app-sg : 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/83829f28-f7ec-4dce-b15b-b3099b90f179/Untitled.png)
+![my-app-sg](https://github.com/user-attachments/assets/ea1cb6af-a94c-43d6-836b-bcf4fb46297b)
+
 
 backend-vprofile-sg: 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/6d85730c-1aa7-4be1-bf8a-bc0a866893de/Untitled.png)
+![backend-sg](https://github.com/user-attachments/assets/c0b6d7e9-44f6-44cc-baad-ab8fd0e67f73)
+
 
 - 3. Lancer quatre instances EC2 avec USER DATA pour configurer l'application sur les instances.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/71b7045a-835f-4f3f-a225-b46939da2728/Untitled.png)
+![instances](https://github.com/user-attachments/assets/de200677-02ef-4112-8575-0b048ed68a74)
+
 
 Tous les scripts se trouvent sur le répertoire GitHub : https://github.com/Ymouaddan/Vprofile-lift-shift.git
 
@@ -45,17 +50,19 @@ Tous les scripts se trouvent sur le répertoire GitHub : https://github.com/Ymou
 
 Dans le code source nous utilison les nom de la machine pour la communication entre les diffirent instance eyet service pour ce raison nous avons cree une hosted zon DNS dans route 53 et nous avons ajouté des enregistrement de type A pour les 3 machine de backend 
 
-(ici il ya une photo private hosted zone )
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/c280f93c-e034-4c81-b41f-938e09a35459/Untitled.png)
+![private_hosted_zone](https://github.com/user-attachments/assets/c8b63f91-ad53-41dd-8a17-2cef972f14e5)
+
 
 Construire l'application en utilisant Maven pour créer l'artifact ROOT.war à partir du code source
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/49678da5-f9fd-46f8-b25e-4a07ccabad9d/Untitled.png)
+![application_build](https://github.com/user-attachments/assets/00766202-447d-4525-a8bf-7fa0ba1950c1)
+
 
 - 6. Configurer AWS CLI avec un compte ayant des accès sur S3 et uploader le fichier vprofile-v2.war
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/157603b9-545e-4bb0-868f-9ad978b5ba10/Untitled.png)
+![s3](https://github.com/user-attachments/assets/c58b2187-058b-42e3-a2da-9677c270ba94)
+
 
 Ensuite, se connecter à l'instance vprofile-app, télécharger l'artifact, arrêter le service Tomcat, supprimer le dossier ROOT et le remplacer par vprofile-v2.war que nous avons renommé en ROOT.war.
 
@@ -81,26 +88,42 @@ La première étape est de créer un groupe cible VPROFILE-APP-TG dans lequel no
 
 Target group:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/54ffd88a-2110-4497-b0ce-6edbcb961335/Untitled.png)
+![TG](https://github.com/user-attachments/assets/c6af0dd8-9928-4c4e-aef3-692ad38c7902)
+
 
 ALB:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/a1b5168f-ec09-42a3-8c10-88b9cba25a88/Untitled.png)
+![ALB](https://github.com/user-attachments/assets/2af47973-6540-49fd-9870-b2c9396aeaef)
 
-### 9. Créer une auto scaling group pour l'instance vprofile-app pour assurer la scalabilité et la disponibilité de l'application
+
+
+###  8. Ajouter un enregistrement de type CNAME qui mappe le nom de domaine vers le DNS de l'ALB dans Route 53
+   ![CNAME_RECORDE](https://github.com/user-attachments/assets/98183536-6971-4e50-a98b-ae7ea27f8c08)
+
+   
+### 9. Créer une auto scaling group pour l'instance vprofile-app pour assurer la scalabilité et la disponibilité de l'application8. Ajouter un enregistrement de type CNAME qui mappe le nom de domaine vers le DNS de l'ALB dans Route 53
+
+   
 
 La première chose à faire est de créer une image AMI depuis notre instance vprofile-app.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/8131d610-221a-410f-8ce7-fb292482be09/Untitled.png)
+![AMI_image](https://github.com/user-attachments/assets/0e08536c-bc7f-4408-9288-e758ee376a4b)
 
-la premiere chose a faire c’est de cree une image AMI depuis notre instance vprofile-app
-
-(ici il ya une photo de image créé  )
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/38be85f7-5e60-4090-948d-a5b312a3e6ad/Untitled.png)
 
 Ensuite, créer un launch template définissant l'image, les groupes de sécurité, les paires de clés et autres configurations à utiliser.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/68723667-a290-4b0b-ae5d-38c2551a29e3/Untitled.png)
+![lunch_template](https://github.com/user-attachments/assets/4e000817-01bc-4135-8e2b-99b07c1ba2ee)
 
 Ensuite, nous avons créé un groupe d'auto-scaling dans lequel nous avons défini le nombre minimal et maximal d'instances à lancer, ainsi que le type de scaling sur lequel il sera basé.
+![auto_scaling](https://github.com/user-attachments/assets/3bcb8289-72b5-4cea-945b-e76d54e5a797)
+
+Ensuite, vérifiez le bon fonctionnement du site et notre configuration.
+![vprofileapptest](https://github.com/user-attachments/assets/a6867846-b813-4b3f-8417-95ce5a710f74)
+
+
+Fin
+Merci
+Yousssef MOU
+
+
+
