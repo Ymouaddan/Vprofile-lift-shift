@@ -1,6 +1,7 @@
 Ce projet vise à déployer l'application Vprofile, développée en Java, sur une plateforme cloud AWS. L'application comporte deux niveaux principaux :
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/72ef51f0-aa43-45fe-89f7-5329844bff1d/Untitled.png)
+![Diagram_architecture](https://github.com/user-attachments/assets/70fe1bba-443e-4daa-b49a-5d71c800eba0)
+
 
 ### Objectifs du déploiement cloud :
 
@@ -103,7 +104,3 @@ Ensuite, créer un launch template définissant l'image, les groupes de sécurit
 ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/68723667-a290-4b0b-ae5d-38c2551a29e3/Untitled.png)
 
 Ensuite, nous avons créé un groupe d'auto-scaling dans lequel nous avons défini le nombre minimal et maximal d'instances à lancer, ainsi que le type de scaling sur lequel il sera basé.
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/19c75780-20cd-4b80-94b8-a5f5b4d08f22/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/13adfb3a-db8c-42bd-9f9c-1548801e3170/eeb06975-1cf2-4674-ac38-1a95a8a813cc/Untitled.png)
